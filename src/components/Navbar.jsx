@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const navBar = ["About", "Skill", "Portfolio"];
 
   return (
     <nav aria-label="Main navigation" className="relative">
@@ -11,10 +14,14 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal">
-          <ul className="flex gap-8 text-[18px]">
-            <li><a href="#" className="hover:underline">About</a></li>
-            <li><a href="#" className="hover:underline">Skills</a></li>
-            <li><a href="#" className="hover:underline">Portfolio</a></li>
+          <ul className="flex gap-8 text-lg">
+            {navBar.map((item, index) => (
+              <li key={index}>
+                <a href={`#${item.toLowerCase()}`} className="hover:underline">
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -25,23 +32,27 @@ const Navbar = () => {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
-            )}
-          </svg>
+          {open ? (
+            <FaTimes className="w-6 h-6" />
+          ) : (
+            <FaBars className="w-6 h-6" />
+          )}
         </button>
       </div>
       <div
         id="mobile-menu"
-        className={`lg:hidden transition-max-height duration-200 overflow-hidden bg-green-700 ${open ? "max-h-60" : "max-h-0"}`}
+        className={`lg:hidden transition-max-height duration-200 overflow-hidden bg-green-700 ${
+          open ? "max-h-60" : "max-h-0"
+        }`}
       >
         <ul className="flex flex-col gap-4 p-4 text-[18px] text-white">
-          <li><a href="#" className="block">About</a></li>
-          <li><a href="#" className="block">Skills</a></li>
-          <li><a href="#" className="block">Portfolio</a></li>
+          {navBar.map((item, index) => (
+            <li key={index}>
+              <a href={`#${item.toLowerCase()}`} className="hover:underline">
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
