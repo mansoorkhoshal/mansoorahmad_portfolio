@@ -8,13 +8,13 @@ const Navbar = () => {
 
   return (
     <nav aria-label="Main navigation" className="relative">
-      <div className="h-[10vh] flex items-center justify-between z-50 text-white px-4 py-4 lg:px-20 lg:py-5">
-        <div className="flex items-center flex-1">
-          <span className="text-3xl font-bold">Mansoor</span>
+      <div className="h-16 flex items-center justify-between z-50 text-white px-8 py-4 lg:px-50 lg:py-5">
+        <div className="flex flex-1">
+          <span className="text-3xl font-Montserrat">Mansoor</span>
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal">
-          <ul className="flex gap-8 text-lg">
+        <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal font-Montserrat">
+          <ul className="flex gap-8 text-xl">
             {navBar.map((item, index) => (
               <li key={index}>
                 <a href={`#${item.toLowerCase()}`} className="hover:underline">
@@ -41,11 +41,11 @@ const Navbar = () => {
       </div>
       <div
         id="mobile-menu"
-        className={`lg:hidden transition-max-height duration-200 overflow-hidden bg-green-700 ${
+        className={`lg:hidden transition-max-height duration-1500 overflow-hidden bg-green-700 ${
           open ? "max-h-60" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 p-4 text-[18px] text-white">
+        <ul className="flex flex-col gap-4 p-4 text-lg text-white">
           {navBar.map((item, index) => (
             <li key={index}>
               <a href={`#${item.toLowerCase()}`} className="hover:underline">
