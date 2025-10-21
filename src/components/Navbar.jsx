@@ -33,9 +33,8 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={item.link}
-                  className="hover:underline flex gap-2 items-center"
+                  className="hover:underline items-center"
                 >
-                  {item.icon}
                   {item.name}
                 </a>
               </li>

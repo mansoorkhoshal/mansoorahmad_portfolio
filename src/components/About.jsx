@@ -1,5 +1,6 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import Hero from "../assets/about11.jpg";
+import Lottie from "lottie-react";
+import Hero from "../assets/aboutme.json";
 
 const About = () => {
   const handleWhatsAppClick = () => {
@@ -35,7 +36,8 @@ const About = () => {
           </button>
         </div>
         <div className="w-200">
-          <img src={Hero} alt="hero-image" />
+          {/* <img src={Hero} alt="hero-image" /> */}
+          <Lottie animationData={Hero} loop={true} className="w-96 h-72" />
         </div>
       </div>
     </section>

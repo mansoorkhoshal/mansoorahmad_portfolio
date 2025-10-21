@@ -1,4 +1,4 @@
-import Hero from "../assets/about.webp";
+import Hero from "../assets/Skill.json";
 import html from "../assets/html.png";
 import css from "../assets/css.png";
 import tailwind from "../assets/tailwind.png";
@@ -9,35 +9,53 @@ import react from "../assets/reactjs.png";
 import mongodb from "../assets/mongodb.png";
 import express from "../assets/express.png";
 import github from "../assets/github.ico";
+import Lottie from "lottie-react";
 
 const Skill = () => {
+  const techStack = [
+    { src: html, alt: "HTML5" },
+    { src: css, alt: "CSS3" },
+    { src: bootstrap, alt: "Bootstrap" },
+    { src: tailwind, alt: "Tailwind CSS" },
+    { src: js, alt: "JavaScript" },
+    { src: nodejs, alt: "Node.js" },
+    { src: express, alt: "Express" },
+    { src: react, alt: "React" },
+    { src: mongodb, alt: "MongoDB" },
+    { src: github, alt: "GitHub" },
+  ];
+
   return (
     <section className="bg-white px-8 py-4 lg:px-30 lg:py-5 font-Montserrat">
       <div className="container mx-auto px-20 flex flex-col-reverse lg:flex-row gap-4">
-        <div className="w-150">
-          <img src={Hero} alt="hero-image" />
+        <div>
+          {/* <img src={Hero} alt="hero-image" /> */}
+          <Lottie animationData={Hero} loop={true} className="w-96 h-72" />
         </div>
         <div className="max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
           <h1 className="sm:text-3xl lg:text-3xl font-bold">What I do</h1>
           <h2 className="sm:text-3xl lg:text-3xl font-bold ">
             <span className="text-green-600">Full Stack</span> Web Developer
           </h2>
-          <div className="w-25 flex gap-3">
-            <img src={html} alt="HTML5" />
-            <img src={css} alt="css" />
-            <img src={bootstrap} alt="bootstrap" />
-            <img src={tailwind} alt="tailwind" />
-            <img src={js} alt="js" />
-          </div>
-          <div className="w-25 flex gap-3">
-            <img src={nodejs} alt="node" />
-            <img src={express} alt="express" />
-            <img src={react} alt="react" />
-            <img src={mongodb} alt="mongodb" />
-            <img src={github} alt="github" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center items-center mt-8">
+            {techStack.map((tech, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src={tech.src}
+                  alt={tech.alt}
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                />
+                <p className="text-sm mt-2 text-gray-700 font-medium">
+                  {tech.alt}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="">
+          <div>
             <li>Develop robust and scalable frontend applications.</li>
             <li>
               Build engaging user interfaces with modern JavaScript frameworks.
