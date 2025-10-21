@@ -1,13 +1,27 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaIdCard, FaEnvelope } from "react-icons/fa";
+import { SiHyperskill } from "react-icons/si";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const navBar = ["About", "Skill", "Portfolio"];
+  const navItems = [
+    { name: "Home", link: "/", icon: <FaHome className="text-2xl" /> },
+    { name: "About", link: "/about", icon: <FaIdCard className="text-2xl" /> },
+    {
+      name: "Skill",
+      link: "/skill",
+      icon: <SiHyperskill className="text-2xl" />,
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+      icon: <FaEnvelope className="text-2xl" />,
+    },
+  ];
 
   return (
-    <nav aria-label="Main navigation" className="relative">
+    <nav aria-label="Main navigation" className="relative bg-green-700">
       <div className="h-16 flex items-center justify-between z-50 text-white px-8 py-4 lg:px-50 lg:py-5">
         <div className="flex flex-1">
           <span className="text-3xl font-Montserrat">Mansoor</span>
@@ -15,10 +29,14 @@ const Navbar = () => {
 
         <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal font-Montserrat">
           <ul className="flex gap-8 text-xl">
-            {navBar.map((item, index) => (
+            {navItems.map((item, index) => (
               <li key={index}>
-                <a href={`#${item.toLowerCase()}`} className="hover:underline">
-                  {item}
+                <a
+                  href={item.link}
+                  className="hover:underline flex gap-2 items-center"
+                >
+                  {item.icon}
+                  {item.name}
                 </a>
               </li>
             ))}
@@ -41,15 +59,16 @@ const Navbar = () => {
       </div>
       <div
         id="mobile-menu"
-        className={`lg:hidden transition-max-height duration-1500 overflow-hidden bg-green-700 ${
+        className={`lg:hidden ml-5 transition-max-height duration-1500 overflow-hidden bg-green-700 ${
           open ? "max-h-60" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col gap-4 p-4 text-lg text-white">
-          {navBar.map((item, index) => (
+          {navItems.map((item, index) => (
             <li key={index}>
-              <a href={`#${item.toLowerCase()}`} className="hover:underline">
-                {item}
+              <a href={item.link} className="hover:underline flex gap-2">
+                {item.icon}
+                {item.name}
               </a>
             </li>
           ))}
