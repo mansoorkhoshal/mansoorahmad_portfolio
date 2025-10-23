@@ -26,10 +26,9 @@ const Skill = () => {
   ];
 
   return (
-    <section className="bg-white px-8 py-4 lg:px-30 lg:py-5 font-Montserrat">
+    <section className="bg-white px-8 py-4 lg:px-30 lg:py-5 font-League">
       <div className="container mx-auto px-20 flex flex-col-reverse lg:flex-row gap-4">
-        <div>
-          {/* <img src={Hero} alt="hero-image" /> */}
+        <div> 
           <Lottie animationData={Hero} loop={true} className="w-96 h-72" />
         </div>
         <div className="max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">

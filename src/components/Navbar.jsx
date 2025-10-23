@@ -6,17 +6,15 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", link: "/", icon: <FaHome className="text-2xl" /> },
-    { name: "About", link: "/about", icon: <FaIdCard className="text-2xl" /> },
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
     {
       name: "Skill",
       link: "/skill",
-      icon: <SiHyperskill className="text-2xl" />,
     },
     {
       name: "Contact",
       link: "/contact",
-      icon: <FaEnvelope className="text-2xl" />,
     },
   ];
 
@@ -24,17 +22,14 @@ const Navbar = () => {
     <nav aria-label="Main navigation" className="relative bg-green-700">
       <div className="h-16 flex items-center justify-between z-50 text-white px-8 py-4 lg:px-50 lg:py-5">
         <div className="flex flex-1">
-          <span className="text-3xl font-Montserrat">Mansoor</span>
+          <span className="text-3xl font-League">Mansoor</span>
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal font-Montserrat">
+        <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal font-League">
           <ul className="flex gap-8 text-xl">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a
-                  href={item.link}
-                  className="hover:underline items-center"
-                >
+                <a href={item.link} className="hover:underline items-center">
                   {item.name}
                 </a>
               </li>
@@ -65,8 +60,7 @@ const Navbar = () => {
         <ul className="flex flex-col gap-4 p-4 text-lg text-white">
           {navItems.map((item, index) => (
             <li key={index}>
-              <a href={item.link} className="hover:underline flex gap-2">
-                {item.icon}
+              <a href={item.link} className="hover:underline flex gap-2"> 
                 {item.name}
               </a>
             </li>

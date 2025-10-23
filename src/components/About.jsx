@@ -11,14 +11,14 @@ const About = () => {
   };
 
   return (
-    <section className="bg-white mt-10 px-8 py-4 lg:px-30 lg:py-5 font-Montserrat">
+    <section className="bg-white mt-10 px-8 py-4 lg:px-30 lg:py-5 font-League">
       <div className="container mx-auto px-20 flex flex-col-reverse lg:flex-row gap-8">
         <div className="max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
           <h1 className="text-xl sm:text-4xl lg:text-4xl font-bold">
             I'm Mansoor Ahmad <br />{" "}
             <span className="text-green-600">Full Stack</span> Web Developer
           </h1>
-          <p className="text-sm lg:text-base">
+          <p className="text-sm lg:text-lg">
             I am Mansoor Ahmad, a passionate Full Stack Web Developer who loves
             building powerful and user-friendly digital experiences. I work with
             modern technologies such as JavaScript and React on the frontend,
