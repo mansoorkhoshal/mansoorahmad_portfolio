@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaTimes, FaHome, FaIdCard, FaEnvelope } from "react-icons/fa";
-import { SiHyperskill } from "react-icons/si";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,19 +7,14 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    {
-      name: "Skill",
-      link: "/skill",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
+    { name: "Skill", link: "/skill" },
+    { name: "Contact", link: "/contact" },
   ];
 
   return (
     <nav aria-label="Main navigation" className="relative bg-green-700">
-      <div className="h-16 flex items-center justify-between z-50 text-white px-8 py-4 lg:px-50 lg:py-5">
+      {/* Shared responsive container */}
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between z-50 text-white">
         <div className="flex flex-1">
           <span className="text-3xl font-League">Mansoor</span>
         </div>
@@ -51,21 +45,25 @@ const Navbar = () => {
           )}
         </button>
       </div>
+
+      {/* Mobile menu (keeps same container width visually) */}
       <div
         id="mobile-menu"
-        className={`lg:hidden ml-5 transition-max-height duration-1500 overflow-hidden bg-green-700 ${
+        className={`lg:hidden transition-max-height duration-500 overflow-hidden bg-green-700 ${
           open ? "max-h-60" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 p-4 text-lg text-white">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <a href={item.link} className="hover:underline flex gap-2"> 
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="max-w-7xl mx-auto px-6">
+          <ul className="flex flex-col gap-4 p-4 text-lg text-white">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a href={item.link} className="hover:underline flex gap-2">
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

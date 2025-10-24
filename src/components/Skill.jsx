@@ -25,18 +25,32 @@ const Skill = () => {
     { src: github, alt: "GitHub" },
   ];
 
+  const skillIntro = [
+    "Develop robust and scalable frontend applications.",
+    "Build engaging user interfaces with modern JavaScript frameworks.",
+    "Craft efficient backend solutions with Node.js and Firebase.",
+    "I value clean, maintainable code and delivering exceptional user experiences.",
+  ];
+
   return (
-    <section className="bg-white px-8 py-4 lg:px-30 lg:py-5 font-League">
-      <div className="container mx-auto px-20 flex flex-col-reverse lg:flex-row gap-4">
-        <div> 
-          <Lottie animationData={Hero} loop={true} className="w-96 h-72" />
+    <section className="bg-white py-8 font-League">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row gap-8 items-center">
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <div className="w-48 sm:w-64 md:w-80 lg:w-96">
+            <Lottie
+              animationData={Hero}
+              loop={true}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
-        <div className="max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
+        <div className="w-full lg:w-1/2 max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
           <h1 className="sm:text-3xl lg:text-3xl font-bold">What I do</h1>
-          <h2 className="sm:text-3xl lg:text-3xl font-bold ">
+          <h2 className="sm:text-3xl lg:text-3xl font-bold">
             <span className="text-green-600">Full Stack</span> Web Developer
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center items-center mt-8">
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center items-center mt-8">
             {techStack.map((tech, index) => (
               <div
                 key={index}
@@ -54,18 +68,10 @@ const Skill = () => {
             ))}
           </div>
 
-          <div>
-            <li>Develop robust and scalable frontend applications.</li>
-            <li>
-              Build engaging user interfaces with modern JavaScript frameworks.
-            </li>
-            <li>
-              Craft efficient backend solutions with Node.js and Firebase.
-            </li>
-            <li>
-              I value clean, maintainable code and delivering exceptional user
-              experiences.
-            </li>
+          <div className="mt-6 space-y-2 text-left">
+            {skillIntro.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
           </div>
         </div>
       </div>

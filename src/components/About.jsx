@@ -11,11 +11,11 @@ const About = () => {
   };
 
   return (
-    <section className="bg-white mt-10 px-8 py-4 lg:px-30 lg:py-5 font-League">
-      <div className="container mx-auto px-20 flex flex-col-reverse lg:flex-row gap-8">
-        <div className="max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
+    <section className="bg-white mt-10 py-8 font-League">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+        <div className="w-full lg:w-1/2 max-w-xl text-center lg:text-left space-y-6 leading-tight text-gray-700">
           <h1 className="text-xl sm:text-4xl lg:text-4xl font-bold">
-            I'm Mansoor Ahmad <br />{" "}
+            I'm Mansoor Ahmad <br />
             <span className="text-green-600">Full Stack</span> Web Developer
           </h1>
           <p className="text-sm lg:text-lg">
@@ -35,9 +35,15 @@ const About = () => {
             <FaArrowRightLong className="transform transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
-        <div className="w-200">
-          {/* <img src={Hero} alt="hero-image" /> */}
-          <Lottie animationData={Hero} loop={true} className="w-96 h-72" />
+
+        <div className="w-full lg:w-1/4 flex  ml-50">
+          <div className="w-48 sm:w-64 md:w-80 lg:w-96">
+            <Lottie
+              animationData={Hero}
+              loop={true}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </section>
